@@ -10,7 +10,7 @@ var out = process.argv.shift();
 var ret = [];
 fs.readdirSync(arg)
         .filter(function(file) {
-                return (file.indexOf('.') !== 0) && (file !== 'load.js')
+                return (file.indexOf('.') !== 0) && (file !== 'load.js');
         })
         .forEach(function(file) {
                 ret.push(require('./' + arg + '/' + file));

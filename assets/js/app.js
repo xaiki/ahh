@@ -1,7 +1,7 @@
-define (['jquery', 'underscore', 'backbone', 'utils',
+define (['jquery', 'underscore', 'backbone',
          'models/person',
          'views/map'],
-        function($, _, Backbone, Util, Person, MapView) {
+        function($, _, Backbone, Person, MapView) {
             var App = new Backbone.Marionette.Application();
 
             App.addRegions({

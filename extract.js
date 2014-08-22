@@ -9,6 +9,8 @@ moment.locale('es');
 process.argv.shift();
 process.argv.shift();
 
+var outDir = process.argv.shift();
+
 process.argv.forEach (function (arg) {
         fs.readFile(arg, function (err, data) {
                 debug ("reading", arg);
@@ -51,7 +53,7 @@ process.argv.forEach (function (arg) {
                 });
 
                 var nombre = facts.nombre ? facts.nombre.replace (/\s/g, '-'):arg.replace('.txt', '').replace(/.*\//, '');
-                var out ='json/people/' + nombre + '.json';
+                var out = outDir + nombre + '.json';
                 debug ('writting', out);
                 fs.writeFileSync (out, JSON.stringify({facts: facts, dates: ret}));
 

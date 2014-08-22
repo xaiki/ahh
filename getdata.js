@@ -3,6 +3,12 @@ var request = require('request')
 ,moment = require ('moment').locale('es')
 ;
 
+try {
+        fs.mkdirSync ('data');
+} catch (e) {
+        console.log (e);
+}
+
 var personas = {};
 ['Alejandro_Ulla',
  'Alfredo Elías Kohon',
